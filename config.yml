@@ -18,7 +18,7 @@ motd:
   # Current Supported varables
     # player
   # Use \n for a carrige return
-  ingame: '&6 Welcome, %player%!\n&6Type &4/help &6for to see a list of commands!\n&6Type &4 /list &6 to see a list of online players!'
+  ingame: '&6 Welcome, %player%!\n&6Type &4/help &6to see a list of commands!\n&6Type &4 /list &6 to see a list of online players!'
   
   # MOTD that shows on the Clients Server List
   server: '&6Timber&9Wolf'
