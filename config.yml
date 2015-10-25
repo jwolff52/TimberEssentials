@@ -1,0 +1,47 @@
+# Default Configuration File for TimberEssentials!
+# A list of commands to run by the console when a player logs in.
+# NOTE: DO NOT add the '/' to the beginning
+# NOTE: These commands are run by the server, NOT the player!
+consoleCommands: 
+  1: manload
+
+# A list of commands to be run by the player when they log in!
+# NOTE: DO NOT add the '/' to the beginning
+# NOTE: These commands are run by the server disquised as the player!
+playerCommands:
+  1: motd
+
+# Options for MOTD
+motd:
+  # MOTD that the player is shown when they preform /motd
+  # Put variables between '%' signs e.g.: %player%
+  # Current Supported varables
+    # player
+  # Use \n for a carrige return
+  ingame: '&6 Welcome, %player%!\n&6Type &4/help &6for to see a list of commands!\n&6Type &4 /list &6 to see a list of online players!'
+  
+  # MOTD that shows on the Clients Server List
+  server: '&6Timber&9Wolf'
+  
+  # Whether or not to use the Server MOTD above
+  useServerMotd: true
+
+# Options for Nicknames
+nick:
+  # Prefix for all nicknames on the server.
+  # e.g.: '/nick JabbaTheHutt' produces '~JabbaTheHutt' when the player talks
+  prefix: '~'
+  # Maximum ammount of characters allowed in a nickname (does not include the prefix)
+  maxLength: 15
+
+# Options for TimberVoteListener
+tvl:
+  useTVL: true
+  useLiveBroadcast: true
+  reward: 'diamond 1'
+  
+# Options for server warps
+warps:
+  # Each warp has its own .yml file stored in the "warps" folder, but the name and GUI materail are stored here for easy access
+  # The material defaults to a feather, but it can be anything it should ALWAYS be formated as the example below
+  # pvp: FEATHER

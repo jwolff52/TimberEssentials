@@ -1,0 +1,169 @@
+name: TimberEssentials
+main: io.github.jwolff52.timberessentials.TimberEssentials
+version: 0.64.01-alpha
+softdepend: [Votifier, LiveBroadcast]
+loadafter: [Votifier, LiveBroadcast, Multiverse-Core]
+commands:
+    te: 
+        description: Reloads the TimberEssentials Plugin!
+        usage: /te
+    kick:
+        description: Kicks a player from the server!
+        usage: /kick <player> [reason]
+    ban:
+        description: Bans a player from the server!
+        usage: /ban <player> [reason]
+    setmotd:
+        description: Sets the In-Game or Server MOTD
+        usage: /setmotd <ingame|server> <motd>
+    motd:
+        description: Prints the In-Game MOTD
+        usage: /motd
+    nick:
+        description: Give yourself or another player a nickname!
+        usage: /nick <nickname|off> [player]
+    tp:
+        description: Teleport to another player!
+        usage: /tp <targetplayer> [otherplayer]
+    tppos:
+        description: Teleport to another position!
+        usage: /tp <x> <y> <z> [otherplayer]
+    back:
+        description: Return to your previous location!
+        usage: /back    
+    setwarp:
+        description: The ability to create a server warp
+        usage: /setwarp <warpName> <guiItem>
+    warp:
+        description: Opens the warps GUI or warps to a position
+        usage: /warp <warpname>
+    add:
+        description: Creates a new arena
+        usage: /add <type> <name>
+    setup:
+        description: Enters setup mode for an arena
+        usage: /setup <name>
+    join:
+        description: Join an arena, use without parameters for a GUI
+        usage: /join [arenaName]
+    leave:
+        description: Leave the arena you are currently in
+        usage: /leave
+    readyup:
+        description: ReadyUp for the current game
+        usage: /readyup
+    sign:
+        description: Gives the sender a sign
+        usage: /sign
+    start:
+        description: Starts a game
+        usage: /start
+permissions:
+    te.*:
+        description: Gives access to all of the LiveBroadcast Commands
+        children:
+            te.reload: true
+            te.kick: true
+            te.ban: true
+            te.motd: false
+            te.setmotd.ingame: true
+            te.setmotd.server: true
+            te.nick.self: true
+            te.nick.other: true
+            te.nick.color: true
+            te.tp.self: true
+            te.tp.other: true
+            te.back: true
+            te.warp: true
+            te.setwarp: true
+            te.warps.gui: true
+            te.arena.setup: true
+            te.arena.create: true
+            te.arena.join: true
+            te.arena.leave: true
+            te.arena.readyup: true
+            te.arenas.gui: true
+            te.sign: true
+        default: false
+    te.setmotd.*:
+        description: Allows the player to set BOTH the In-Game and Server MOTD's
+        children:
+            te.setmotd.ingame: true
+            te.setmotd.motd: true
+    te.nick.*:
+        description: Allows the player to set nicknames for all players
+        children:
+            te.nick.self: true
+            te.nick.other: true
+            te.nick.color: true
+    te.tp.*:
+        desciption: Allows the player to use all tp commands
+        children:
+            te.tp.self: true
+            te.tp.other: true
+    te.reload:
+        description: Allows the player to reload the config.yml
+        default: false
+    te.kick:
+        description: Allows the player to kick others
+        default: false
+    te.ban:
+        description: Allows the player to ban others
+        default: false
+    te.setmotd.ingame:
+        description: Allows the player to set the In-Game motd
+        default: false
+    te.setmotd.server:
+        description: Allows the player to set the Server motd
+        default: false
+    te.motd:
+        description: Allows the player to view the In-Game motd
+        default: true
+    te.nick.self:
+        description: Allows the player to set their nickname
+        default: false
+    te.nick.other:
+        description: Allows the player to other players their nicknames
+        default: false
+    te.nick.color:
+        description: Allows the player to use colors in their nickname
+        default: false
+    te.tp.self:
+        description: Allows the player to teleport themselve to another player
+        default: false
+    te.tp.other:
+        description: Allows the player to teleport another player to someone else
+        default: false  
+    te.back:
+        description: Allows the player to return to their previous location
+        default: false
+    te.warp:
+        description: Allows the player to warp to a different location
+        default: false
+    te.setwarp:
+        description: Allows the player to create a server warp
+        default: false
+    te.warps.gui:
+        description: Allows the player access to the warps GUI
+        default: false
+    te.arena.setup:
+        description: Allows the player to setup an arena
+        default: false
+    te.arena.create:
+        description: Allows the player to create an arena
+        default: false
+    te.arena.join:
+        description: Allows the player to join an arena
+        default: false
+    te.arena.leave:
+        description: Allows the player to leave an arena
+        default: false
+    te.arena.readyup:
+        description: Allows the player to readyup
+        default: false
+    te.arenas.gui:
+        description: Allows the player access to the arenas GUI
+        default: false
+    te.sign:
+        decription: Gives the user the ability to use /sign
+        default: false
