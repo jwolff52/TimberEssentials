@@ -1,6 +1,6 @@
 name: TimberEssentials
 main: io.github.jwolff52.timberessentials.TimberEssentials
-version: 0.64.01-alpha
+version: 0.66.05-alpha
 softdepend: [Votifier, LiveBroadcast]
 loadafter: [Votifier, LiveBroadcast, Multiverse-Core]
 commands:

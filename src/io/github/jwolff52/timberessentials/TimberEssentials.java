@@ -25,7 +25,7 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class TimberEssentials extends JavaPlugin {
-	public final Logger logger = Logger.getLogger("Minecraft");
+	public static final Logger logger = Logger.getLogger("Minecraft");
 
 	public SettingsManager sm;
 
@@ -118,7 +118,7 @@ public class TimberEssentials extends JavaPlugin {
 			ArenasGUI.initializePlayerGUI(p);
 		}
 
-		this.logger.info("TimberEssentials Version: " + pdf.getVersion()
+		logger.info("TimberEssentials Version: " + pdf.getVersion()
 				+ " has been enabled!");
 
 		super.onEnable();
@@ -128,7 +128,7 @@ public class TimberEssentials extends JavaPlugin {
 		saveDefaultConfig();
 		sm.savePlayers();
 		sm.saveWarps();
-		this.logger.info("WelcomeBook has been disabled!");
+		logger.info("TimberEssentials has been disabled!");
 	}
 
 	@Override

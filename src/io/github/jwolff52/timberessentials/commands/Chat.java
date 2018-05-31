@@ -50,12 +50,12 @@ public class Chat {
 			return true;
 		}
 		if(args[0].equals("off")){
-			te.sm.getPlayerData(player).set("nickname", null);
+			te.sm.getPlayerData(player).set("nickname", "off");
+			te.sm.savePlayers();
 			player.sendMessage(te.getTitle()+"Your nickname was turned off!");
 			return true;
-		}else{
-			te.sm.getPlayerData(player).set("nickname", te.getNickPrefix()+args[0]);
 		}
+		te.sm.getPlayerData(player).set("nickname", te.getNickPrefix()+args[0]);
 		te.sm.savePlayers();
 		if(!player.hasPermission("te.nick.color")){
 			player.sendMessage(te.getTitle()+"Your nickname was set to "+te.getNickPrefix()+args[0]+"!");

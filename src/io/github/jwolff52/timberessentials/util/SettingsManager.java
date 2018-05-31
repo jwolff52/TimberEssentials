@@ -246,6 +246,10 @@ public class SettingsManager {
 	
 	public void addPlayer(Player p){
 		File pf=new File(playersDir+"/"+p.getName()+".yml");
+		if(pf.exists()) {
+			updatePlayer(p);
+			return;
+		}
 		try {
 			pf.createNewFile();
 		} catch (IOException e1) {
@@ -270,6 +274,13 @@ public class SettingsManager {
 		te.getLogger().info(ChatColor.GREEN+"Successfully created player file for "+p.getName()+"!");
 		playerData.add(pfc);
 		playerFiles.add(pf);
+	}
+	
+	public void updatePlayer(Player p) {
+		FileConfiguration pfc = getPlayerData(p);
+		pfc.set("timestamps.login", Calendar.getInstance().getTimeInMillis());
+		pfc.set("ipAddress", p.getAddress().getAddress().toString().substring(1));
+		savePlayers();
 	}
 	
 	public void addWarp(String name, Location loc, String icon){
@@ -304,6 +315,7 @@ public class SettingsManager {
 		te.getLogger().info(ChatColor.GREEN+"Successfully created warp file for "+name+"!");
 		warpData.add(wfc);
 		warpFiles.add(wf);
+		saveConfig();
 	}
 	
 	public void delWarp(String name){
