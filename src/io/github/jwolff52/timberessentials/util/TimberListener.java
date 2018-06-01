@@ -24,9 +24,6 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.server.ServerListPingEvent;
 import org.bukkit.inventory.ItemStack;
 
-import com.vexsoftware.votifier.model.Vote;
-import com.vexsoftware.votifier.model.VotifierEvent;
-
 public class TimberListener implements Listener {
 
 	private TimberEssentials te;
@@ -48,7 +45,7 @@ public class TimberListener implements Listener {
 		}
 	}
 
-	@SuppressWarnings("deprecation")
+	/**@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onPlayerVote(VotifierEvent e) {
 		if (te.isUsingTVL()) {
@@ -64,7 +61,7 @@ public class TimberListener implements Listener {
 				TFileWriter.writeFile(que, v.getUsername());
 			}
 		}
-	}
+	}**/
 
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent e) {
